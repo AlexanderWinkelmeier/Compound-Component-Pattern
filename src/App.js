@@ -5,7 +5,6 @@ export default function App() {
   return (
     <div>
       <h1>Compound Component Pattern</h1>
-      {/* herkömmliche Umsetzung mit props (props explosion!) */}
       {/* <Counter
         iconIncrease="+"
         iconDecrease="-"
@@ -13,19 +12,23 @@ export default function App() {
         hideLabel={false}
         hideIncrease={false}
         hideDecrease={false}
+        positionCount="top"
       /> */}
+
       <Counter>
-        <Counter.Label>My flexible counter</Counter.Label>
-        <Counter.Increase />
-        <Counter.Decrease />
+        <Counter.Label>My super flexible counter</Counter.Label>
+        <Counter.Decrease icon="-" />
+        <Counter.Increase icon="+" />
         <Counter.Count />
       </Counter>
+
       <div>
         <Counter>
-          <Counter.Label>My flexible counter</Counter.Label>
-          <Counter.Increase />
-          <Counter.Decrease />
-          <Counter.Count />
+          <Counter.Decrease icon="◀️" />
+          <div>
+            <Counter.Count />
+          </div>
+          <Counter.Increase icon="▶️" />
         </Counter>
       </div>
     </div>
